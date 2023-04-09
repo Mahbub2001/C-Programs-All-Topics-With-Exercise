@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct student
+{
+    char name[20];
+    int roll;
+
+    struct subject
+    {
+        char name[20];
+        int marks;
+
+    } subject[2];
+    int full_marks;
+    float average;
+
+} student;
+
+void write_file()
+{
+    student *s;
+    FILE *ptr;
+
+    int n;
+    s = (struct student *)malloc(sizeof(struct student));
+
+    ptr = fopen("my_file1", "w");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("For student - 1 : %d\n", i + 1);
+        printf("\nEnter the name : ");
+        scanf("%[^\n]s", s[i].name);
+        printf("\nEnter the roll number : ");
+        scanf("%d", &s[i].roll);
+
+        for (int j = 0; j < 2; j++)
+        {
+            printf("Enter subject - %d name : ", j + 1);
+            scanf("%[^\n]s", &s[i].subject[j].name);
+            printf("Enter the marks of subject - %d", j + 1);
+            scanf("%d", &s[i].subject[j].marks);
+
+            s[i].full_marks += s[i].subject[j].marks;
+        }
+        s[i].average = s[i].full_marks / 2.0;
+        fwrite(&s[i], sizeof(student), 1, ptr);
+    }
+}
+
+int main()
+{
+    write_file();
+
+    return 0;
+}

@@ -1,0 +1,12 @@
+{
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "barrier": "c",
+    "chrono": "c",
+    "random": "c",
+    "latch": "c",
+    "limits": "c",
+    "semaphore": "c",
+    "valarray": "c"
+  }
+}
