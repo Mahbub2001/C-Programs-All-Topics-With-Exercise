@@ -7,6 +7,9 @@
     "latch": "c",
     "limits": "c",
     "semaphore": "c",
-    "valarray": "c"
+    "valarray": "c",
+    "bitset": "c",
+    "algorithm": "c",
+    "stdio.h": "c"
   }
 }
